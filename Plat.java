@@ -7,7 +7,7 @@ public abstract class Plat {
         return prix;
     }
     public String toString(){
-        return " nom: "+nom+" prix : "+prix;
+        return "prix : "+prix;
     }
     public abstract String getType();
     public abstract int getSatisfaction();
