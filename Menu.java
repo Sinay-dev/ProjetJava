@@ -8,8 +8,12 @@ public class Menu{
     private Object[] tab;
     private int cpt;
     private Menu(){
-        if(Math.random()*(2)<=1){
+        double client=Math.random()*(3);
+        if(client<=1){
             this.c="Elfe";
+        }
+        else if(client>1 && client<=2){
+            this.c="Humain";
         }
         else{
             this.c="Gobelin";
@@ -38,28 +42,42 @@ public class Menu{
     public double score(){
         double coeffSatisfaction=0.5;
         double satisfaction=0.0;
+        satisfaction+=((Entree)(tab[0])).getSatisfaction();
+        satisfaction+=((Plat)(tab[1])).getSatisfaction();
+        satisfaction+=((Dessert)(tab[2])).getSatisfaction();
+
         for(int i=0;i<tab.length;i++){
             if(i==0){
                 if( c == ((Entree)(tab[i])).getType()){
                     coeffSatisfaction++;
-                    satisfaction+=((Entree)(tab[i])).getSatisfaction();
                 }
             }
             else if (i==1){
                 if( c == ((Plat)(tab[i])).getType()){
                     coeffSatisfaction++;
-                    satisfaction+=((Plat)(tab[i])).getSatisfaction();
                 }
             }
             else{
                 if( c == ((Dessert)(tab[i])).getType()){
                     coeffSatisfaction++;
-                    satisfaction+=((Dessert)(tab[i])).getSatisfaction();
                 }
             }
-            if(c=="elfe"&& tab[i] instanceof PlatdeGobelin){
+            if(c=="Elfe"&& tab[i] instanceof PlatdeGobelin){
                 satisfaction-=50;
             }
+            if(c=="Humain"&& tab[i] instanceof PlatdeGobelin){
+                satisfaction-=70;
+            }
+            if(c=="Elfe"&& tab[i] instanceof PlatdeElfe){
+                satisfaction+=10;
+            }
+            if(c=="Humain"&& tab[i] instanceof PlatdeHumain){
+                satisfaction+=10;
+            }
+            if(c=="Gobelin"&& tab[i] instanceof PlatdeGobelin){
+                satisfaction+=10;
+            }
+
         }
         return coeffSatisfaction*satisfaction;
     }
