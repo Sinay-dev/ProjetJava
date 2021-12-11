@@ -6,5 +6,7 @@ Mécanisme de singleton
 
 Score
 
+Les Plats
+
 Approvisionnement .
 
