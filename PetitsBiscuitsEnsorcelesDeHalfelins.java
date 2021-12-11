@@ -1,4 +1,4 @@
-public class PetitsBiscuitsEnsorcelesDeHalfelins extends Dessert implements PlatdeElfe PlatdeGobelin PlatdeHumain {
+public class PetitsBiscuitsEnsorcelesDeHalfelins extends Dessert implements PlatdeElfe, PlatdeGobelin, PlatdeHumain {
     private int satisfaction;
     public PetitsBiscuitsEnsorcelesDeHalfelins(double prix){
         super(prix);
