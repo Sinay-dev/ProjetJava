@@ -1,8 +1,6 @@
 public abstract class Dessert {
-    protected String nom;
     protected double prix;
-    public Dessert(String nom, double prix){
-        this.nom=nom;
+    public Dessert(double prix){
         this.prix=prix;
     }
     public double getPrix(){
