@@ -39,9 +39,14 @@ public class Menu{
         return tab;
     }
 
+
     public double score(){
         double coeffSatisfaction=0.5;
         double satisfaction=0.0;
+        double prix=0.0;
+        prix+=((Entree)(tab[0])).getPrix();
+        prix+=((Plat)(tab[1])).getPrix();
+        prix+=((Dessert)(tab[2])).getPrix();
         satisfaction+=((Entree)(tab[0])).getSatisfaction();
         satisfaction+=((Plat)(tab[1])).getSatisfaction();
         satisfaction+=((Dessert)(tab[2])).getSatisfaction();
@@ -77,7 +82,9 @@ public class Menu{
             if(c=="Gobelin"&& tab[i] instanceof PlatdeGobelin){
                 satisfaction+=10;
             }
-
+            if(prix>=100){
+                satisfaction-=50;
+            }
         }
         return coeffSatisfaction*satisfaction;
     }
