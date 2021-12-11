@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 
 public class Menu{
+    //methode du singleton
+    private static final Menu INSTANCE = new Menu();
     private String c;
     private Object[] tab;
     private int cpt;
-    public Menu(){
+    private Menu(){
         if(Math.random()*(2)<=1){
             this.c="Elfe";
         }
@@ -15,7 +17,9 @@ public class Menu{
         tab= new Object[3];
         this.cpt=0;
     }
-
+    public static Menu getMenu() {
+            return INSTANCE;
+        }
     public void add(Object o){
         if (cpt < 3){
             tab[cpt]=o;
