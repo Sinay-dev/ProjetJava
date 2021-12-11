@@ -1,8 +1,6 @@
 public abstract class Entree {
-    protected String nom;
     protected double prix;
-    public Entree(String nom, double prix){
-        this.nom=nom;
+    public Entree(double prix){
         this.prix=prix;
     }
     public double getPrix(){
