@@ -1,4 +1,4 @@
-public abstract class Plat {
+ abstract class Plat {
     protected String nom;
     protected double prix;
     public Plat(String nom, double prix){
